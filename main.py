@@ -8,6 +8,6 @@ app = Flask(__name__)
 @app.route("/", methods=["POST"])
 def webhook():
     data = request.json
-    print("Received TradingView Alert:", data)
+    print("🔔 Received TradingView Alert:", data, flush=True)
     # You could add logic here to forward this to OKX API
     return jsonify({"status": "received"}), 200
